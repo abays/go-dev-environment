@@ -1,0 +1,14 @@
+---
+# Sets up a Golang development environment w/Revel
+
+- name: install go dev env
+  hosts: go_devs
+  remote_user: '{{ whom }}'
+
+  roles:
+    - go_dev
+
+  environment:
+    GOROOT: /usr/local/go/
+    GOPATH: "{{ ansible_env.HOME }}/go"
+    PATH: /usr/local/go/bin:{{ ansible_env.HOME }}/go/bin:{{ ansible_env.PATH }}

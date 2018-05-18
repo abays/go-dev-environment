@@ -1,0 +1,3 @@
+---
+- include: prereqs.yml
+- include: go.yml
