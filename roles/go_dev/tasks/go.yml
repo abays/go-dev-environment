@@ -43,3 +43,6 @@
   with_items:
     - ~/.bash_profile
     - ~/.bashrc
+
+- name: install dep
+  shell: curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
