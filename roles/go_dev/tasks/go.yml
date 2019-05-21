@@ -17,6 +17,12 @@
     state: directory
     mode: 0755
 
+- name: create go bin directory
+  file:
+    path: ~/go/bin
+    state: directory
+    mode: 0755
+
 - name: add GOROOT to PATH
   lineinfile:
     path: "{{ item }}"
@@ -31,6 +37,15 @@
     path: "{{ item }}"
     state: present
     line: 'export GOPATH=~/go'
+  with_items:
+    - ~/.bash_profile
+    - ~/.bashrc
+
+- name: set GOBIN in profile
+  lineinfile:
+    path: "{{ item }}"
+    state: present
+    line: 'export GOPATH=~/go/bin'
   with_items:
     - ~/.bash_profile
     - ~/.bashrc
