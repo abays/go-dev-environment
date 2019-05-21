@@ -45,7 +45,7 @@
   lineinfile:
     path: "{{ item }}"
     state: present
-    line: 'export GOPATH=~/go/bin'
+    line: 'export GOBIN=~/go/bin'
   with_items:
     - ~/.bash_profile
     - ~/.bashrc
